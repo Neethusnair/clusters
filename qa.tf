@@ -1,57 +1,57 @@
-terraform {
+# terraform {
 
-  required_providers {
-    google = {
-      source  = "hashicorp/google"
-      version = "3.52.0"
-    }
-  }
+#   required_providers {
+#     google = {
+#       source  = "hashicorp/google"
+#       version = "3.52.0"
+#     }
+#   }
 
-  #required_version = "~> 0.14"
+#   #required_version = "~> 0.14"
 
-  backend "remote" {
-    organization = "sreyo23"
+#   backend "remote" {
+#     organization = "sreyo23"
 
-    workspaces {
-      name = "gke_cluster"
-    }
-  }
+#     workspaces {
+#       name = "gke_cluster"
+#     }
+#   }
 
-}
+# }
 
 
-variable "region" {
-  default     = "us-central1"
-  description = "region"
-}
+# variable "region" {
+#   default     = "us-central1"
+#   description = "region"
+# }
 
-variable "zone" {
-  default     = "us-central1-a"
-  description = "zone"
-}
+# variable "zone" {
+#   default     = "us-central1-a"
+#   description = "zone"
+# }
 
 variable "name_var1" {
   description = "name"
 }
 
-provider "google" {
-  region = var.region
-}
+# provider "google" {
+#   region = var.region
+# }
 
-variable "gke_username" {
-  default     = ""
-  description = "gke username"
-}
+# variable "gke_username" {
+#   default     = ""
+#   description = "gke username"
+# }
 
-variable "gke_password" {
-  default     = ""
-  description = "gke password"
-}
+# variable "gke_password" {
+#   default     = ""
+#   description = "gke password"
+# }
 
-variable "gke_num_nodes" {
-  default     = 1
-  description = "number of gke nodes"
-}
+# variable "gke_num_nodes" {
+#   default     = 1
+#   description = "number of gke nodes"
+# }
 
 # VPC
 resource "google_compute_network" "vpc1" {
@@ -92,8 +92,8 @@ resource "google_container_cluster" "primary1" {
 
 # Separately Managed Node Pool
 resource "google_container_node_pool" "primary_nodes1" {
-  name     = "${google_container_cluster.primary1.name}-node-pool"
-  location = var.zone
+  name       = "${google_container_cluster.primary1.name}-node-pool"
+  location   = var.zone
   cluster    = google_container_cluster.primary1.name
   node_count = var.gke_num_nodes
 
