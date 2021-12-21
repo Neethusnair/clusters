@@ -1,0 +1,17 @@
+# This is a workflow to call back to the application. This is a code snippet, needs to be customized and added after the job whose success is being reported back.
+name: Callback
+
+on:
+  workflow_dispatch
+
+jobs:
+ Job1:
+    #needs: Job# previous job whose success is being reported back here. This job would run only if the previous job is a success.
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Webhook
+      uses: distributhor/workflow-webhook
+      with:
+        url: "https://api.countapi.xyz/hit/managedorg.com/visits"
+        json: '{ "created": "success" }'
