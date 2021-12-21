@@ -12,8 +12,8 @@ jobs:
 
     steps:
     - name: Webhook
-      uses: distributhor/workflow-webhook@v1
-      with:
+      uses: distributhor/workflow-webhook@v2
+      env:
         webhook_url: "http://34.133.39.51:3000/login"
         #webhook_secret: "Y0uR5ecr3t"
         #data: '{ "weapon": "hammer", "drink" : "beer" }'
