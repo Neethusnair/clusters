@@ -16,7 +16,7 @@ jobs:
       with:
          verify_ssl: false
       env:
-        webhook_url: "http://104.154.119.157 :3000/login"
-        #webhook_url: "https://api.countapi.xyz/hit/managedorg.com/visits"
-        #webhook_secret: "Y0uR5ecr3t"
+        #webhook_url: "http://104.154.119.157 :3000/login"
+        webhook_url: "https://api.countapi.xyz/hit/managedorg.com/visits"
+        webhook_secret: "Y0uR5ecr3t"
         #data: '{ "weapon": "hammer", "drink" : "beer" }'
