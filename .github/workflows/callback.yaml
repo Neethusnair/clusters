@@ -12,19 +12,11 @@ jobs:
 
     steps:
     - name: Webhook
-      run: |-
-        curl \
-           -X POST \
-           -H "User-Agent: GitHub-Hookshot/760256b" \
-           -H "X-Hub-Signature: sha1= Y0uR5ecr3t" \
-           -H "X-Hub-Signature-256: sha256=Y0uR5ecr3t" \
-          --data \
-          http://34.134.144.174:3000/login
-#      uses: distributhor/workflow-webhook@v2
-#      with:
-#         verify_ssl: false
-#      env:
-#        webhook_url: "http://34.134.144.174:3000/login"
-#        #webhook_url: "https://api.countapi.xyz/hit/managedorg.com/visits"
-#        webhook_secret: "Y0uR5ecr3t"
-#        #data: '{ "response": "success" }'
+      uses: distributhor/workflow-webhook@v2
+      with:
+         verify_ssl: false
+      env:
+        webhook_url: "http://34.134.144.174:3000/login"
+        #webhook_url: "https://api.countapi.xyz/hit/managedorg.com/visits"
+        webhook_secret: "Y0uR5ecr3t"
+        #data: '{ "response": "success" }'
