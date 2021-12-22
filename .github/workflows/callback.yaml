@@ -18,5 +18,5 @@ jobs:
       env:
         webhook_url: "http://35.184.226.9:3000/login"
         #webhook_url: "https://api.countapi.xyz/hit/managedorg.com/visits"
-        webhook_secret: "Y0uR5ecr3"
+        webhook_secret: "Y0uR5ecr3t"
         #data: '{ "weapon": "hammer", "drink" : "beer" }'
