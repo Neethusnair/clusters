@@ -7,7 +7,7 @@ on:
 
 env:
   PPROJECT_ID: ${{ secrets.GKE_PROJECT }}
-  GKE_CLUSTER1: new-gke
+  GKE_CLUSTER1: dev-gke
   GKE_CLUSTER2: qa-gke
   GKE_CLUSTER3: prod-gke
   GKE_ZONE: us-central1-a
